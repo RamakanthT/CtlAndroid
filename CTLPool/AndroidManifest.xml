@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tcs.ctl.cplus.pool"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".FlashScreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".SigninRegPage"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="tcs.ctl.cplus.pool.SigninRegPage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".LoginPage"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="tcs.ctl.cplus.pool.LoginPage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".RegisterPage"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="tcs.ctl.cplus.pool.RegisterPage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:name=".PoolScreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="tcs.ctl.cplus.pool.PoolScreen" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:name=".PoolCreate"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="tcs.ctl.cplus.pool.PoolCreate" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>       
+        
+        <activity
+            android:name=".PoolSearch"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="tcs.ctl.cplus.pool.PoolSearch" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".PoolHistory"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="tcs.ctl.cplus.pool.PoolHistory" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".PoolView"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="tcs.ctl.cplus.pool.PoolView" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+    </application>
+
+</manifest>

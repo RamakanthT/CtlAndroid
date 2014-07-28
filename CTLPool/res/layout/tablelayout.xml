@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+
+                        <!-- Row 1 with single column -->
+                        <TableRow
+                            android:layout_height="match_parent"
+                            android:layout_width="fill_parent"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:id="@+id/tvTitle"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:textSize="24dp" android:text="Pool View"  android:layout_span="3"
+                                android:padding="10dip" 
+                                android:textColor="#000"
+                                android:gravity="center_horizontal"                                
+                                />
+
+                       </TableRow>
+         
+                        <TableRow
+                            android:layout_height="match_parent"
+                            android:layout_width="fill_parent"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:id="@+id/tvSrcDest"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:textSize="18dp" android:text="Waverock - Jntu"  android:layout_span="3"
+                                android:padding="10dip" android:background="#dcdcdc"
+                                android:textColor="#000"
+                                android:gravity="center_horizontal"
+                                android:layout_margin="5dp"/>
+
+                       </TableRow>
+                       
+                        <TableRow
+                            android:layout_height="match_parent"
+                            android:layout_width="fill_parent"
+                            android:gravity="center_horizontal"
+                            >
+
+                            <TextView
+                                android:id="@+id/tvVia"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:textSize="18dp" android:text="Via: Hitecity"  android:layout_span="3"
+                                android:padding="10dip" android:background="#dcdcdc"
+                                android:textColor="#000"
+                                android:gravity="center_horizontal"
+                                android:layout_margin="5dp"/>
+
+                       </TableRow>
+                        <!-- Row 2 with 3 columns -->
+
+                        <TableRow                            
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+                            <TextView
+                                android:id="@+id/tvDate" android:text="7/18/2014"
+                                android:layout_weight="1" android:background="#dcdcdc"
+                                android:textColor="#000000"
+                                android:padding="10dip" android:gravity="center"
+                                android:layout_margin="5dp"
+                                />
+                            <TextView
+                                android:id="@+id/tvTime" android:text="6:00 PM"
+                                android:layout_weight="1" android:background="#d3d3d3"
+                                android:textColor="#000000"
+                                android:padding="10dip" android:gravity="center"
+                                android:layout_margin="5dp"/>                            
+                        </TableRow>
+                         
+                        <!-- Row 3 with 2 columns -->
+                        <TableRow
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                android:id="@+id/tvSeats" android:text="Seats: 4"
+                                android:layout_weight="1"  android:background="#d3d3d3"
+                                android:textColor="#000000"
+                                android:padding="10dip" android:gravity="center"
+                                android:layout_margin="5dp"/>                     		
+                            <TextView
+                                android:id="@+id/tvVehicle" android:text="Vehicle: I10"
+                                android:layout_weight="1" android:background="#dcdcdc"
+                                android:textColor="#000000"
+                                android:padding="10dip" android:gravity="center"
+                                android:layout_margin="5dp"/>
+                        </TableRow>
+                        
+                        <TableRow
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:gravity="center_horizontal"                           
+                            >
+                            <ImageButton 
+                                android:layout_height="wrap_content"
+                            android:layout_width="0dip"
+                            android:id="@+id/bDecrement"
+                            android:src="@drawable/decrement"
+                            android:layout_weight="1"
+                            android:layout_margin="3dp"
+                            />
+
+                            <EditText
+                                android:id="@+id/editText1"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:ems="10" 
+                                android:layout_weight="1"
+                                android:width="1dp"
+                                android:layout_margin="3dp">                                
+                            </EditText>
+                            
+                            "
+                             <ImageButton 
+                                android:layout_height="wrap_content"
+                            android:layout_width="0dip"
+                            android:id="@+id/bIncrement"
+                            android:src="@drawable/increment"
+                            android:layout_weight="1"
+                            android:layout_margin="3dp"
+                             />
+
+                             <Button
+                                 android:id="@+id/button1"
+                                 style="?android:attr/buttonStyleSmall"
+                                 android:layout_width="0dip"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="2"
+                                 android:text="Join" 
+                                 android:textSize="24sp"
+                                 android:background="@drawable/green_button"
+                                 android:layout_margin="5dp"
+                                 />
+                            
+                        </TableRow>
+                        <TableRow                            
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+                            <TextView
+                                android:id="@+id/tvName" android:text="Name: Ramakanth"
+                                android:layout_weight="1" android:background="#dcdcdc"
+                                android:textColor="#000000"
+                                android:padding="10dip" android:gravity="center"
+                                android:layout_margin="5dp"/>
+                            <TextView
+                                android:id="@+id/tvId" android:text="EmpId: 761887"
+                                android:layout_weight="1" android:background="#d3d3d3"
+                                android:textColor="#000000"
+                                android:padding="10dip" android:gravity="center"
+                                android:layout_margin="5dp"/>                            
+                        </TableRow>
+                        <TableRow                            
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+                            <TextView
+                                android:id="@+id/tvMobile" android:text="Ph: 9999999999"
+                                android:layout_weight="1" android:background="#dcdcdc"
+                                android:textColor="#000000"
+                                android:padding="10dip" android:gravity="center"
+                                android:layout_margin="5dp"/>
+                            <TextView
+                                android:id="@+id/tvGender" android:text="Gender: Male"
+                                android:layout_weight="1" android:background="#d3d3d3"
+                                android:textColor="#000000"
+                                android:padding="10dip" android:gravity="center"
+                                android:layout_margin="5dp"/>                            
+                        </TableRow>
+
+                       
+                         
+      </TableLayout>

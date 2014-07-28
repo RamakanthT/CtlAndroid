@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"     
+    android:weightSum="100">
+    
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="80"
+        android:src="@drawable/logo"/>
+
+    <LinearLayout        
+        android:orientation="horizontal"
+        android:layout_weight="20"
+        android:weightSum="100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <Button 
+        android:id="@+id/bSignup"
+        android:text="SignUp"
+        android:textColor="#ffffff"
+        android:layout_weight="50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/black_button"
+        />
+        
+    <Button 
+        android:id="@+id/bLogin"
+        android:text="Login"
+        android:textColor="#ffffff"
+        android:layout_weight="50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/black_button"
+        />
+    </LinearLayout>
+    
+    
+</LinearLayout>

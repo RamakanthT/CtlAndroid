@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="5"
+        android:paddingTop="5dp"
+        android:text="View Pool"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+    
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:paddingTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:paddingLeft="10dp"
+            android:text="Date: *"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#000000" />
+
+        <Spinner 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:entries="@array/spinnerdata"
+            />
+    </LinearLayout>  
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:paddingTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:paddingLeft="10dp"
+            android:text="Route: "
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#000000" />
+
+        <Spinner 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:entries="@array/spinnerdata"
+            />
+    </LinearLayout>  
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:paddingTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:paddingLeft="10dp"
+            android:text="Via: "
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#000000" />
+
+        <Spinner 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:entries="@array/spinnerdata"
+            />
+    </LinearLayout>  
+    <LinearLayout
+        android:id="@+id/ll4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:paddingTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:paddingLeft="10dp"
+            android:text="Seats: "
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#000000" />
+
+        <Spinner 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:entries="@array/spinnerdata"
+            />
+    </LinearLayout>  
+    <LinearLayout
+        android:id="@+id/ll5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:paddingTop="5dp"
+        android:gravity="center">
+
+        <Button
+          android:layout_width="80dp"
+          android:layout_height="50dp"
+          android:background="@android:drawable/btn_default_small"
+          android:text="View"
+          android:textSize="18sp"
+          android:textColor="#000000" />
+    </LinearLayout>
+</LinearLayout>

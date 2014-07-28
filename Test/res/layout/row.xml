@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/pfrom"
+    android:textSize="20sp"
+    android:text="Waverock"
+    />
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/pfrom"
+    android:id="@+id/pHyphen"
+    android:textSize="20sp"
+    android:text="--"
+    />
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/pHyphen"
+    android:id="@+id/pto"
+    android:textSize="20sp"
+    android:text="Jntu"
+    />
+
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/pfrom"
+    android:id="@+id/pviaText"
+    android:text="Via: "
+    />
+
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/pfrom"
+    android:layout_toRightOf="@+id/pviaText"
+    android:id="@+id/pvia"
+    android:text="Hitecity"
+    />
+
+<TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/pviaText"
+    android:id="@+id/pseatsText"
+    android:text="Seats: "
+    />
+
+<TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/pviaText"
+    android:layout_toRightOf="@+id/pseatsText"
+    android:id="@+id/pseats"
+    android:text="2"
+    />
+
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/pseatsText"
+    android:id="@+id/pdate"
+    android:text="24-Jul-2014"
+    />
+<TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/pseatsText"
+    android:layout_toRightOf="@+id/pdate"
+    android:layout_marginLeft="30dp"
+    android:id="@+id/ptime"
+    android:text="8:00 PM"
+    />
+</RelativeLayout>
