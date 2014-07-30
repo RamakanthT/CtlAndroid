@@ -50,11 +50,16 @@ public class PoolCreate extends Activity implements OnClickListener {
 
 	static final int TIME_DIALOG_ID = 999;
 
+	UserBean UBOBJ;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pool_create);
-
+		
+		Intent globalIntent=getIntent();
+		UBOBJ=(UserBean)globalIntent.getParcelableExtra("globalUbObject");
+		
 		initialize();
 
 		setSpinnerValues();
@@ -80,16 +85,11 @@ public class PoolCreate extends Activity implements OnClickListener {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub				
 				fetchValues();
-				if(validateValues())
+				if(validateValues() && businessLogic())
 				{
 					Toast.makeText(PoolCreate.this, "Create Clicked", Toast.LENGTH_SHORT).show();
-					System.out.println("strSpinFrom "+strSpinFrom);
-					System.out.println("strSpinTo "+strSpinTo);
-					System.out.println("strSpinVia "+strSpinVia);
-					System.out.println("strEtDate "+strEtDate);
-					System.out.println("strEtTime "+strEtTime);
-					System.out.println("strEtVehicle "+strEtVehicle);
-					System.out.println("strEtSeats "+strEtSeats);
+					
+					
 				}
 			}
 		});
@@ -325,6 +325,32 @@ public class PoolCreate extends Activity implements OnClickListener {
 			return String.valueOf(c);
 		else
 			return "0" + String.valueOf(c);
+	}
+	
+	protected boolean businessLogic()
+	{
+		PoolBean pbObj=new PoolBean();
+			
+		pbObj.setFrom(strSpinFrom);
+		pbObj.setTo(strSpinTo);
+		pbObj.setVia(strSpinVia);
+		pbObj.setDate(strEtDate);
+		pbObj.setTime(strEtTime);
+		pbObj.setVehicle(strEtVehicle);
+		pbObj.setSeats(strEtSeats);
+		
+		PoolDb pdbObj=new PoolDb(this);
+		Boolean pdbObjReturn=pdbObj.addPool(UBOBJ, pbObj);
+		
+		if(pdbObjReturn)
+		{
+			Toast.makeText(PoolCreate.this, "Pool creation success", Toast.LENGTH_SHORT).show();
+		}
+		else
+		{
+			Toast.makeText(PoolCreate.this, "Pool not created", Toast.LENGTH_SHORT).show();
+		}
+		return pdbObjReturn;
 	}
 
 }

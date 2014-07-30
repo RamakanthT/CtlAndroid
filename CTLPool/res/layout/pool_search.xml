@@ -1,142 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:orientation="vertical"
-    android:weightSum="100" >
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <TextView
+   <TableRow
+        android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="5"
-        android:paddingTop="5dp"
-        android:text="View Pool"
-        android:textColor="#000000"
-        android:textSize="24sp" />
-    
-    <LinearLayout
-        android:id="@+id/ll1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="15"
-        android:orientation="horizontal"
-        android:weightSum="100" 
-        android:paddingTop="5dp">
+        android:padding="5dip" >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
+            android:id="@+id/tvSearchPool"
+            android:text="Search Pool"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_weight="1"
+            android:gravity="center"
+            />     
+        
+    </TableRow>
+    
+   <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+
+       <TextView            
+            android:layout_height="wrap_content"            
             android:paddingLeft="10dp"
             android:text="Date: *"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="#000000" />
-
-        <Spinner 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:entries="@array/spinnerdata"
-            />
-    </LinearLayout>  
-    <LinearLayout
-        android:id="@+id/ll2"
-        android:layout_width="match_parent"
+           
+         <EditText
+         android:id="@+id/etDate"                  
+         android:layout_marginLeft="5dp"
+         android:layout_height="wrap_content"         
+         android:inputType="none"
+         android:layout_weight="1"
+         android:clickable="false"
+         android:cursorVisible="false"
+         android:focusable="false"
+         android:focusableInTouchMode="false"
+         >
+		</EditText>
+        
+        <ImageButton
+         android:id="@+id/ibDate"         
+		 android:layout_height="wrap_content"
+		 android:src="@drawable/ic_launcher" />
+    </TableRow>
+    
+   <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="15"
-        android:orientation="horizontal"
-        android:weightSum="100" 
-        android:paddingTop="5dp">
+        android:padding="5dip" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
+       <TextView            
+            android:layout_height="wrap_content"            
             android:paddingLeft="10dp"
-            android:text="Route: "
+            android:text="From:"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="#000000" />
-
+           
         <Spinner 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:entries="@array/spinnerdata"
+            android:id="@+id/spinFrom"            
+            android:layout_weight="1"  
+            android:gravity="left"         
             />
-    </LinearLayout>  
-    <LinearLayout
-        android:id="@+id/ll3"
-        android:layout_width="match_parent"
+    </TableRow>
+    
+   <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="15"
-        android:orientation="horizontal"
-        android:weightSum="100" 
-        android:paddingTop="5dp">
+        android:padding="5dip" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
+       <TextView            
+            android:layout_height="wrap_content"            
             android:paddingLeft="10dp"
-            android:text="Via: "
+            android:text="To:"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="#000000" />
-
+           
         <Spinner 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:entries="@array/spinnerdata"
+            android:id="@+id/spinTo"            
+            android:layout_weight="1"  
+            android:gravity="left"         
             />
-    </LinearLayout>  
-    <LinearLayout
-        android:id="@+id/ll4"
-        android:layout_width="match_parent"
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="15"
-        android:orientation="horizontal"
-        android:weightSum="100" 
-        android:paddingTop="5dp">
+        android:padding="5dip" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
+       <TextView            
+            android:layout_height="wrap_content"            
             android:paddingLeft="10dp"
-            android:text="Seats: "
+            android:text="Via:"
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="#000000" />
-
+           
         <Spinner 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:entries="@array/spinnerdata"
+            android:id="@+id/spinVia"            
+            android:layout_weight="1"  
+            android:gravity="left"         
             />
-    </LinearLayout>  
-    <LinearLayout
-        android:id="@+id/ll5"
-        android:layout_width="match_parent"
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="10"
-        android:orientation="horizontal"
-        android:weightSum="100" 
-        android:paddingTop="5dp"
+        android:padding="5dip" >
+
+       <TextView            
+            android:layout_height="wrap_content"            
+            android:paddingLeft="10dp"
+            android:text="Seats:"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#000000" />
+           
+        <Spinner 
+            android:id="@+id/spinSeats"            
+            android:layout_weight="1"  
+            android:gravity="left"         
+            />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" 
         android:gravity="center">
 
         <Button
-            android:id="@+id/bView"
-          android:layout_width="80dp"
-          android:layout_height="50dp"
-          android:background="@android:drawable/btn_default_small"
-          android:text="View"
-          android:textSize="18sp"
-          android:textColor="#000000" />
-    </LinearLayout>
-</LinearLayout>
+            android:id="@+id/bSearch"          
+          android:background="@drawable/black_button"
+          android:text="Search"
+          android:textSize="18sp"          
+          android:gravity="center"
+          android:textColor="#ffffff"/>
+       
+    </TableRow>
+    </TableLayout>

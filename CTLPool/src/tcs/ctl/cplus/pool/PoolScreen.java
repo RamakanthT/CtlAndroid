@@ -2,6 +2,8 @@ package tcs.ctl.cplus.pool;
 
 
 
+import java.io.Serializable;
+
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
@@ -13,13 +15,16 @@ public class PoolScreen extends TabActivity implements OnTabChangeListener{
  
     /** Called when the activity is first created. */
       TabHost tabHost;
-       
+       UserBean UBOBJ;
       @Override
       public void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
           setContentView(R.layout.pool_screen);
            
-          // Get TabHost Refference
+          Intent inte=getIntent();
+          UBOBJ=(UserBean)inte.getParcelableExtra("globalUbObject");
+//          System.out.println(ubObj.getName());
+         // Get TabHost Refference
           tabHost = getTabHost();
            
           // Set TabChangeListener called when tab changed
@@ -31,6 +36,7 @@ public class PoolScreen extends TabActivity implements OnTabChangeListener{
            /************* TAB1 ************/
           // Create  Intents to launch an Activity for the tab (to be reused)
           intent = new Intent().setClass(this, PoolCreate.class);
+          intent.putExtra("globalUbObject", UBOBJ);
           spec = tabHost.newTabSpec("First").setIndicator("")
                         .setContent(intent);
            
@@ -39,12 +45,14 @@ public class PoolScreen extends TabActivity implements OnTabChangeListener{
      
           /************* TAB2 ************/
           intent = new Intent().setClass(this, PoolSearch.class);
+          intent.putExtra("globalUbObject", UBOBJ);
           spec = tabHost.newTabSpec("Second").setIndicator("")
                         .setContent(intent);  
           tabHost.addTab(spec);
      
           /************* TAB3 ************/
           intent = new Intent().setClass(this, PoolHistory.class);
+          intent.putExtra("globalUbObject", UBOBJ);
           spec = tabHost.newTabSpec("Third").setIndicator("")
                         .setContent(intent);
           tabHost.addTab(spec);

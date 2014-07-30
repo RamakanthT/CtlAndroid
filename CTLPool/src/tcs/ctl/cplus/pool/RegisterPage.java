@@ -16,13 +16,13 @@ import android.widget.Toast;
 
 public class RegisterPage extends Activity {
 
-	EditText etName,etEmpid,etMobile;
+	EditText etName,etEmpid,etMobile,etPassword;
 	RadioGroup rgGender;
 	RadioButton rbGender;
 	Button bRegister;
 	int checkedRadio;
 	
-	String regName, regEmpid, regMobile, regGender;
+	String regName, regPassword, regMobile, regEmpid,  regGender;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +36,20 @@ public class RegisterPage extends Activity {
 
 	protected void initialize()
 	{
-		etName=(EditText)findViewById(R.id.etName);
-		etEmpid=(EditText)findViewById(R.id.etEmpid);
+		etName=(EditText)findViewById(R.id.etName);		
 		etMobile=(EditText)findViewById(R.id.etMobile);
+		etPassword=(EditText)findViewById(R.id.etPwd);
+		etEmpid=(EditText)findViewById(R.id.etEmpid);
 		rgGender=(RadioGroup)findViewById(R.id.rgGender);
 		bRegister=(Button)findViewById(R.id.bRegister);
 		
 		
-		bRegister.setOnClickListener(regPageeOnClickListener);
+		bRegister.setOnClickListener(regPageOnClickListener);
 		
 	}
 	
 	
-private OnClickListener regPageeOnClickListener =new OnClickListener() {
+private OnClickListener regPageOnClickListener =new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
@@ -57,13 +58,12 @@ private OnClickListener regPageeOnClickListener =new OnClickListener() {
 			{
 			case R.id.bRegister: 
 				fetchData();
-				if(validate())
-				{
-				businessLogic();
-				Toast.makeText(RegisterPage.this, "Register Succesful", Toast.LENGTH_SHORT).show();
+				if(validate()&&businessLogic())
+				{								
+				Intent openLoginPage = new Intent("tcs.ctl.cplus.pool.LoginPage");
+				startActivity(openLoginPage);
 				}								
-//				Intent openLoginPage = new Intent("tcs.ctl.cplus.pool.LoginPage");
-//				startActivity(openLoginPage);			
+			
 				break;			
 			}
 		}
@@ -75,6 +75,7 @@ private OnClickListener regPageeOnClickListener =new OnClickListener() {
 		
 		regName=etName.getText().toString();
 		regMobile=etMobile.getText().toString();
+		regPassword=etPassword.getText().toString();
 		regEmpid=etEmpid.getText().toString();
 		
 			checkedRadio=rgGender.getCheckedRadioButtonId();
@@ -85,6 +86,7 @@ private OnClickListener regPageeOnClickListener =new OnClickListener() {
 		
 		System.out.println(regName);
 		System.out.println(regMobile);
+		System.out.println(regPassword);
 		System.out.println(regEmpid);
 		System.out.println(regGender);
 	}
@@ -101,12 +103,17 @@ private OnClickListener regPageeOnClickListener =new OnClickListener() {
 			Toast.makeText(RegisterPage.this, "Mobile should not be empty", Toast.LENGTH_SHORT).show();
 			return false;
 		}
+		else if(regPassword.length()<1)
+		{
+			Toast.makeText(RegisterPage.this, "Password should be min 5 char", Toast.LENGTH_SHORT).show();
+			return false;
+		}
 		else if(regEmpid.length()<1)
 		{
 			Toast.makeText(RegisterPage.this, "Empid should not be empty", Toast.LENGTH_SHORT).show();
 			return false;
 		}
-		else if(validateUserName(regName) && validateMobile(regMobile) && validateEmpid(regEmpid))
+		else if(validateUserName(regName) && validateMobile(regMobile) && validatePwd(regPassword)&& validateEmpid(regEmpid))
 		{
 			return true;
 		}
@@ -155,6 +162,26 @@ private OnClickListener regPageeOnClickListener =new OnClickListener() {
 		return matcher.matches();
 	}
 	
+	public boolean validatePwd(String regPassword)
+	{
+		Pattern pattern;
+		Matcher matcher; 
+		
+		String USERNAME_PATTERN = "^[a-zA-Z0-9@_]{5,25}$"; 
+		
+		pattern = Pattern.compile(USERNAME_PATTERN);
+		
+		matcher = pattern.matcher(regPassword);
+		
+		if(!matcher.matches())
+		{
+			Toast.makeText(RegisterPage.this, "Password should be in a-z0-9_@ & min 5 digits ", Toast.LENGTH_SHORT).show();
+			return false;
+		}
+		
+		return matcher.matches();
+	}
+	
 	public boolean validateEmpid(String regEmpid)
 	{
 		Pattern pattern;
@@ -175,8 +202,27 @@ private OnClickListener regPageeOnClickListener =new OnClickListener() {
 		return matcher.matches();
 	}
 	
-	protected void businessLogic()
+	protected boolean businessLogic()
 	{
+		UserBean ubObj=new UserBean();
+		ubObj.setName(regName);
+		ubObj.setMobile(regMobile);
+		ubObj.setPassword(regPassword);
+		ubObj.setEmpid(regEmpid);
+		ubObj.setGender(regGender);
+		
+		PoolDb pdbObj=new PoolDb(this);
+		Boolean pdbObjRet=pdbObj.adduser(ubObj);
+		
+		if(!pdbObjRet){
+			Toast.makeText(RegisterPage.this, "Mobile num already existing in db", Toast.LENGTH_SHORT).show();
+			return false;
+		}
+		else
+		{
+			Toast.makeText(RegisterPage.this, "Register Succesful", Toast.LENGTH_SHORT).show();
+			return true;
+		}
 		
 	}
 	
