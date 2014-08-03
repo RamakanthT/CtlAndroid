@@ -6,154 +6,184 @@
     android:orientation="vertical"
     android:weightSum="100" >
 
+    <include layout="@layout/header2" />
+    
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/tvSrcDest"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
         android:text="Pool View"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvVia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/textView2"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/tvSrcDest"
         android:layout_marginRight="34dp"
         android:layout_marginTop="17dp"
         android:text="Via"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="19dp"
-        android:text="Date"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <DigitalClock
-        android:id="@+id/digitalClock1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView6"
-        android:layout_centerHorizontal="true"
-        android:text="DigitalClock" />
-
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/bDecrement"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editText1"
-        android:layout_alignBottom="@+id/editText1"
+        android:layout_alignBaseline="@+id/etCounter"
+        android:layout_alignBottom="@+id/etCounter"
         android:layout_alignParentLeft="true"
         android:text="-" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/etCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_below="@+id/textView6"
+        android:layout_alignLeft="@+id/tvSeats"
+        android:layout_below="@+id/tvSeats"
         android:layout_marginTop="28dp"
-        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toLeftOf="@+id/tvVia"
         android:ems="10"
         android:inputType="number" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bIncrement"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editText1"
-        android:layout_alignBottom="@+id/editText1"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignBaseline="@+id/etCounter"
+        android:layout_alignBottom="@+id/etCounter"
+        android:layout_alignLeft="@+id/tvVia"
         android:text="+" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/bJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editText1"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_alignTop="@+id/etCounter"
+        android:layout_toRightOf="@+id/tvSrcDest"
         android:text="Join" 
         android:onClick="exit"/>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvUname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView6"
-        android:layout_below="@+id/button3"
+        android:layout_alignRight="@+id/tvSeats"
+        android:layout_below="@+id/bJoin"
         android:layout_marginTop="20dp"
         android:text="Name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tvUgender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView9"
-        android:layout_alignBottom="@+id/textView9"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignBaseline="@+id/tvUempid"
+        android:layout_alignBottom="@+id/tvUempid"
+        android:layout_alignRight="@+id/tvSrcDest"
         android:text="Gender"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvUempid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:text="Source - Destination"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/button1"
-        android:text="Seats"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText1"
-        android:layout_alignRight="@+id/textView1"
-        android:text="Vehicle"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView8"
+        android:layout_below="@+id/tvUmobile"
         android:layout_marginTop="37dp"
-        android:layout_toRightOf="@+id/button1"
+        android:layout_toRightOf="@+id/bDecrement"
         android:text="EmpId"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tvUmobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView9"
-        android:layout_below="@+id/textView5"
+        android:layout_alignLeft="@+id/tvUempid"
+        android:layout_below="@+id/tvUname"
         android:layout_marginTop="32dp"
         android:text="Mobile"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    
+    <TextView
+        android:id="@+id/tvSrcDest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Source - Destination"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvSeats"
+        android:layout_below="@+id/tvVia"
+        android:layout_marginTop="18dp"
+        android:text="Date"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvSeats"
+        android:layout_alignLeft="@+id/tvVehicle"
+        android:text="6:00" />
+
+    <TextView
+        android:id="@+id/tvVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvAvailable"
+        android:layout_toRightOf="@+id/tvSrcDest"
+        android:text="Vehicle"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvSeats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDate"
+        android:layout_marginTop="25dp"
+        android:layout_toLeftOf="@+id/tvUmobile"
+        android:text="Seats"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etCounter"
+        android:layout_alignRight="@+id/etCounter"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tvBooked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvVehicle"
+        android:layout_alignBottom="@+id/tvVehicle"
+        android:layout_alignRight="@+id/tvSrcDest"
+        android:layout_marginRight="16dp"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tvMySeats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUname"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/tvSrcDest"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
     
 </RelativeLayout>

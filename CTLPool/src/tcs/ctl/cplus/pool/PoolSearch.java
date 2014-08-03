@@ -11,6 +11,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -40,7 +41,7 @@ public class PoolSearch extends Activity implements OnClickListener {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState);		
 		setContentView(R.layout.pool_search);
 
         Intent inte=getIntent();
@@ -102,11 +103,11 @@ public class PoolSearch extends Activity implements OnClickListener {
 				strVia="";
 			}
 			
-		strSeats = spinSeats.getSelectedItem().toString();
+		strSeats = spinSeats.getSelectedItem().toString();			
 	}
 
 	protected boolean validateValues() {
-		if(strFrom.equals(strTo))
+		if(!strFrom.equals("") && !strTo.equals("") && strFrom.equals(strTo) )
 		{
 			Toast.makeText(PoolSearch.this, "From & To should be different",Toast.LENGTH_SHORT).show();
 			return false;
@@ -187,14 +188,14 @@ public class PoolSearch extends Activity implements OnClickListener {
 	protected void setSpinnerSeats() {
 		List<String> spinnerArray = new ArrayList<String>();
 		
-		spinnerArray.add("None");
+		spinnerArray.add("0");
 		spinnerArray.add("1");
 		spinnerArray.add("2");
 		spinnerArray.add("3");
 		spinnerArray.add("4");
 		spinnerArray.add("5");		
 
-		Collections.sort(spinnerArray);
+//		Collections.sort(spinnerArray);
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, spinnerArray);

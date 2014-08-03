@@ -7,6 +7,7 @@ import java.io.Serializable;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
+import android.view.Window;
 import android.widget.TabHost;
 import android.app.TabActivity;
 import android.widget.TabHost.OnTabChangeListener;
@@ -19,6 +20,8 @@ public class PoolScreen extends TabActivity implements OnTabChangeListener{
       @Override
       public void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
+          getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+  	      getActionBar().hide();
           setContentView(R.layout.pool_screen);
            
           Intent inte=getIntent();

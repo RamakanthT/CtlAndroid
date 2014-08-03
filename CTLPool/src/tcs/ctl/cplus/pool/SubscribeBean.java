@@ -2,7 +2,15 @@ package tcs.ctl.cplus.pool;
 
 public class SubscribeBean {
 	
-	String cid, qty, date, time;
+	String pid, cid, qty, date, time;
+
+	public String getPid() {
+		return pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
 
 	public String getCid() {
 		return cid;

@@ -3,11 +3,25 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="horizontal" >
+    
+    <include layout="@layout/header2" 
+        android:id="@+id/header2"/>
+    
+    <TextView 
+        android:id="@+id/tvPoolList"        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header2"
+        android:text="Pool List"
+        android:textColor="#ffffff"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center"
+        android:background="#000000"/>
     <ListView
         android:id="@+id/listview"        
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" 
-        android:layout_below="@+id/ibTest"
+        android:layout_below="@+id/tvPoolList"
         >
     </ListView>
 

@@ -5,6 +5,8 @@
     android:layout_height="fill_parent"
     android:weightSum="100">
     
+    <include layout="@layout/header" />
+    
     <ImageView
         android:id="@+id/ctl"
         android:layout_width="match_parent"

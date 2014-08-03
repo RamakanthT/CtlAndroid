@@ -5,7 +5,24 @@ import android.os.Parcelable;
 
 public class PoolBean implements Parcelable{
 	
-	String from, to, via, date, time, vehicle, seats, createId, createDate, createTime;
+	String from, to, via, date, time, vehicle, seats, createId, createDate, createTime,availableSeats,bookedSeats;
+	public String getAvailableSeats() {
+		return availableSeats;
+	}
+
+	public void setAvailableSeats(String availableSeats) {
+		this.availableSeats = availableSeats;
+	}
+
+	public String getBookedSeats() {
+		return bookedSeats;
+	}
+
+	public void setBookedSeats(String bookedSeats) {
+		this.bookedSeats = bookedSeats;
+	}
+
+
 	int poolid;
 
 	public int getPoolid() {
@@ -110,7 +127,8 @@ public class PoolBean implements Parcelable{
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		// TODO Auto-generated method stub
-		
+	
+		dest.writeInt(this.poolid);
 		dest.writeString(this.from);
 		dest.writeString(this.to);
 		dest.writeString(this.via);
@@ -121,6 +139,8 @@ public class PoolBean implements Parcelable{
 		dest.writeString(this.createId);
 		dest.writeString(this.createDate);
 		dest.writeString(this.createTime);
+		dest.writeString(this.availableSeats);
+		dest.writeString(this.bookedSeats);
 	}
 	
 	
@@ -137,6 +157,7 @@ public class PoolBean implements Parcelable{
 
 	public PoolBean(Parcel in) {
 		
+		this.poolid=in.readInt();
 	    this.from = in.readString();
 	    this.to = in.readString();
 	    this.via=in.readString();
@@ -147,6 +168,8 @@ public class PoolBean implements Parcelable{
 	    this.createId=in.readString();
 	    this.createDate=in.readString();
 	    this.createTime=in.readString();
+	    this.availableSeats=in.readString();
+	    this.bookedSeats=in.readString();
 	}
 	
 	public PoolBean()

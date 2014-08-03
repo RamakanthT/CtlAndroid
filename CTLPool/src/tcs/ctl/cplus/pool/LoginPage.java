@@ -5,9 +5,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,10 +27,17 @@ public class LoginPage extends Activity{
 	
 	String loginuname,loginpwd;
 	
+	 public static final String MyPREFERENCES = "MyPrefs" ;	   
+	 SharedPreferences sharedpreferences;
+	 public static final String SessUname = "nameKey"; 
+	 public static final String SessUpwd = "passwordKey";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+	    getActionBar().hide();
 		setContentView(R.layout.login);
 		
 		initialize();	
@@ -56,7 +67,12 @@ public class LoginPage extends Activity{
 					fetchData();
 					if(validate()&&businessLogic())
 					{								
-						
+						 Editor editor = sharedpreferences.edit();
+					     
+					      editor.putString(SessUname,UBOBJ2.getName());
+					      editor.putString(SessUpwd, UBOBJ2.getPassword());
+					      editor.commit();
+					      
 						Intent openPoolScreenPage = new Intent(getApplicationContext(), PoolScreen.class);
 						openPoolScreenPage.putExtra("globalUbObject",UBOBJ2);
 						startActivity(openPoolScreenPage);						
@@ -65,6 +81,21 @@ public class LoginPage extends Activity{
 				}
 			}
 		};
+		
+		@Override
+		   protected void onResume() {
+		      sharedpreferences=getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+		      if (sharedpreferences.contains(SessUname))
+		      {
+		      if(sharedpreferences.contains(SessUpwd)){
+		    	  loginuname=sharedpreferences.getString(SessUname, null);
+		    	loginpwd=sharedpreferences.getString(SessUpwd, null);;
+		         Intent i = new Intent(this,PoolScreen.class);
+		         startActivity(i);
+		      }
+		      }
+		      super.onResume();
+		   }
 		
 		protected void fetchData()
 		{

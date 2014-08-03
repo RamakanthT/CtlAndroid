@@ -338,6 +338,8 @@ public class PoolCreate extends Activity implements OnClickListener {
 		pbObj.setTime(strEtTime);
 		pbObj.setVehicle(strEtVehicle);
 		pbObj.setSeats(strEtSeats);
+		pbObj.setAvailableSeats(strEtSeats);
+		pbObj.setBookedSeats("0");
 		
 		PoolDb pdbObj=new PoolDb(this);
 		Boolean pdbObjReturn=pdbObj.addPool(UBOBJ, pbObj);

@@ -61,7 +61,7 @@ class PoolAdapter extends BaseAdapter {
         
         PoolBean poolObj=poolAl.get(position);
 
-        pseatsTv.setText(poolObj.getSeats());
+        pseatsTv.setText(poolObj.getAvailableSeats());
         pfromTv.setText(poolObj.getFrom());
         ptoTv.setText(poolObj.getTo());
         pviaTv.setText(poolObj.getVia());
